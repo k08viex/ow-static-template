@@ -1,0 +1,42 @@
+/* ---------- config ------------------------------ */
+//breakpoint ( .sp_only , .mobile_only , .pc_pnly etc)
+
+$sp: 768px;
+$pc: 769px;
+
+@mixin sp {
+    @media screen and (max-width: $sp){
+        @content;
+    }
+}
+@mixin pc {
+    @media screen and (min-width: $pc){
+        @content;
+    }
+}
+.sp_only {
+    @include pc {
+        display: none !important;
+    }
+}
+.pc_only {
+    @include sp {
+        display: none !important;
+    }
+}
+
+
+// font
+* {
+    font-family:  "メイリオ", "Meiryo","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", sans-serif;
+}
+body {
+    font-size: 1.6rem;
+}
+
+//color
+$black: #333;
+
+
+
+
